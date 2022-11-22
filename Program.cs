@@ -8,9 +8,20 @@ namespace Quest
     class Program
     {
         static void Main(string[] args)
+
         {
             Console.Write("What is your name?");
             string UserName = Console.ReadLine();
+
+            Robe newRobe = new Robe();
+            newRobe.Colors = new List<string>();
+            newRobe.Colors.Add("red and ");
+            newRobe.Colors.Add("blue ");
+            newRobe.Length = 10;
+
+
+
+
 
 
 
@@ -49,7 +60,9 @@ namespace Quest
             int maxAwesomeness = 100;
 
             // Make a new "Adventurer" object using the "Adventurer" class
-            Adventurer theAdventurer = new Adventurer(UserName);
+            Adventurer theAdventurer = new Adventurer(UserName, newRobe);
+
+            theAdventurer.GetDescription(UserName, newRobe);
 
             // A list of challenges for the Adventurer to complete
             // Note we can use the List class here because have the line "using System.Collections.Generic;" at the top of the file.
