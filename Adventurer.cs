@@ -6,6 +6,7 @@ namespace Quest
     public class Adventurer
     {
 
+        public Hat hatObj { get; set; }
         public Robe ColorfulRobe { get; }
         // This is an "immutable" property. It only has a "get".
         // The only place the Name can be set is in the Adventurer constructor
@@ -17,14 +18,15 @@ namespace Quest
         public int Awesomeness { get; set; }
 
         // A constructor to make a new Adventurer object with a given name
-        public Adventurer(string name, Robe robe)
+        public Adventurer(string name, Robe robe, Hat _hat)
         {
+            hatObj = _hat;
             ColorfulRobe = robe;
             Name = name;
             Awesomeness = 50;
         }
 
-        public void GetDescription(string name, Robe robe)
+        public void GetDescription(string name, Robe robe, Hat _hat)
         {
             Console.WriteLine(name);
             robe.Colors.ForEach((color) =>
@@ -34,6 +36,8 @@ namespace Quest
             });
             Console.WriteLine("robe");
             Console.WriteLine("Length: " + robe.Length);
+            Console.WriteLine("with a");
+            Console.Write(_hat.ShininessDescription + "hat" + _hat.ShininessLevel);
 
         }
 
