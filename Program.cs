@@ -19,6 +19,9 @@ namespace Quest
             newRobe.Colors.Add("blue ");
             newRobe.Length = 10;
 
+            Hat newHat = new Hat(4);
+
+
 
 
 
@@ -60,9 +63,9 @@ namespace Quest
             int maxAwesomeness = 100;
 
             // Make a new "Adventurer" object using the "Adventurer" class
-            Adventurer theAdventurer = new Adventurer(UserName, newRobe);
+            Adventurer theAdventurer = new Adventurer(UserName, newRobe, newHat);
 
-            theAdventurer.GetDescription(UserName, newRobe);
+            theAdventurer.GetDescription(UserName, newRobe, newHat);
 
             // A list of challenges for the Adventurer to complete
             // Note we can use the List class here because have the line "using System.Collections.Generic;" at the top of the file.
